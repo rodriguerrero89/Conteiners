@@ -1,0 +1,345 @@
+EJERCICIO 1
+
+import java.util.*;
+
+public class Ejercicio1 {
+
+    public static void main(String[] args) {
+
+        List<String> ciudades = new ArrayList<>();
+        agregarLista(ciudades);
+        mostrarRanking(ciudades);
+
+    }
+
+    public static List<String> agregarLista(List<String> l) {
+
+        l.add("Córdoba");
+        l.add("Buenos Aires");
+        l.add("Bariloche");
+        l.add("Salta");
+        return l;
+    }
+
+    public static void mostrarRanking(List<String> l) {
+
+        for (int i = 1; i <= l.size(); i++) {
+            System.out.println("#" + i + " " + l.get(i-1));
+        }
+    }
+}
+
+*************************************************************************************************************************
+*************************************************************************************************************************
+EJERCICIO 2
+
+import java.util.*;
+public class Ejercicio2 {
+
+    public static void main(String[] args) {
+
+        List<Integer> numeros = new ArrayList<>();
+        crearLista(numeros);
+        System.out.println("La lista: " + numeros + " contiene " + numeros.size() + " elementos.");
+        agregar(numeros);
+        System.out.println("Lista modificada: " + numeros + " contiene " + numeros.size() + " elementos.");
+
+    }
+
+    public static void crearLista(List<Integer> l) {
+
+        l.add(6);
+        l.add(12);
+        l.add(21);
+        l.add(23);
+    }
+
+    public static void agregar(List<Integer> l) {
+
+        l.add(0, 2);
+        l.add(51);
+
+    }
+
+}
+
+********************************************************************************************************
+********************************************************************************************************
+EJERCICIO 3
+
+import java.util.ArrayList;
+
+import java.util.*;
+
+public class Ejercicio3 {
+
+    public static void main(String[] args) {
+
+        List<String> cartas = new ArrayList<>();
+        crearLista(cartas);
+        System.out.println(cartas);
+        Collections.reverse(cartas);
+        System.out.println("Mazo invertido: " + cartas);
+        Collections.sort(cartas);
+        System.out.println("Mazo mezaclado: " + cartas);
+
+    }
+
+    public static void crearLista(List<String> l) {
+
+        l.add("A");
+        l.add("2");
+        l.add("3");
+        l.add("4");
+        l.add("5");
+        l.add("6");
+        l.add("7");
+        l.add("8");
+        l.add("9");
+        l.add("10");
+        l.add("11");
+        l.add("12");
+    }
+
+
+}
+
+**********************************************************************************************************
+**********************************************************************************************************
+EJERCICIO 4
+
+import java.util.*;
+
+public class Ejercicio4 {
+
+    public static void main(String[] args) {
+
+        List<String> alumnos = new ArrayList<>();
+        crearLista(alumnos);
+        List<String> curso1 = alumnos.subList(0, 4);
+        List<String> curso2 = alumnos.subList(4, 8);
+        List<String> curso3 = alumnos.subList(8, 12);
+        //curso(alumnos,curso1,curso2,curso3);
+
+        System.out.println("Curso 1: " + curso1);
+        System.out.println("Curso 2: " + curso2);
+        System.out.println("Curso 3: " + curso3);
+    }
+
+    public static void crearLista(List<String> l) {
+
+        l.add("Azanza Veronica");
+        l.add("Azanza Agustina");
+        l.add("Malgieri Mabel");
+        l.add("Kisiel Matias");
+        l.add("Kisiel Graciela");
+        l.add("Kisiel Candelaria");
+        l.add("Kisiel Camilo");
+        l.add("Fernandez Marianela");
+        l.add("Quiñonez Alejandro");
+        l.add("Vazquez Maria");
+        l.add("Azanza Francisco");
+        l.add("Frias Hilda");
+    }
+
+    /*public static void curso(List<String> l, List<String> c, List<String> c1, List<String> c2) {
+        int contador = 1;
+        for(int i = 0; i < 12; i++) {
+            if(contador <= 4) {
+                c.add(l.get(i));
+                contador++;
+            }
+            else if (contador > 4 && contador <=8 ) {
+                c1.add(l.get(i));
+                contador++;
+            }
+            else {
+                c2.add(l.get(i));
+                contador++;
+            }
+        }
+    }*/
+}
+
+***********************************************************************************************************
+***********************************************************************************************************
+EJERCICIO 5
+
+import java.util.*;
+
+public class Ejercicio5 {
+
+    public static void main(String[] args) {
+
+        List<Integer> horasTrabajo = new ArrayList<>();
+        List<Integer> valorHora = new ArrayList<>();
+        List<Integer> total = new ArrayList<>();
+        System.out.println("Horas de trabajo por día: " + cargarHoras(horasTrabajo));
+        System.out.println("Valor por hora: " + valores(valorHora));
+        System.out.println("Total por día: " + totales(total,horasTrabajo,valorHora));
+        System.out.println("Total: $" + suma(total));
+
+    }
+
+    public static List<Integer> cargarHoras(List<Integer> horas) {
+
+        horas.add(8);
+        horas.add(7);
+        horas.add(8);
+        horas.add(6);
+        horas.add(4);
+        return horas;
+    }
+
+    public static List<Integer> valores(List<Integer> valor) {
+
+        valor.add(250);
+        valor.add(250);
+        valor.add(250);
+        valor.add(250);
+        valor.add(250);
+        return valor;
+    }
+
+    public static List<Integer> totales(List<Integer> total,List<Integer> horas,List<Integer> valor) {
+
+        for(int i = 0; i < 5; i++) {
+            total.add(horas.get(i)*valor.get(i));
+        }
+        return total;
+
+    }
+
+    public static int suma(List<Integer> total) {
+
+        int s = total.get(0) + total.get(1) + total.get(2) + total.get(3) + total.get(4);
+        return s;
+    }
+}
+
+*************************************************************************************************************************
+*************************************************************************************************************************
+EJERCICIO 6
+
+import java.util.*;
+
+public class Ejercicio6 {
+
+
+    public static void main(String[] args) {
+
+        Empleado p1 = new Empleado("Veronica Azanza",40501459,125,250);
+        Empleado p2 = new Empleado("Matias Kisiel",36019450,130,300);
+        Empleado p3 = new Empleado("Azanza Agustina",41354932,110,200);
+        Empleado p4 = new Empleado("Malgieri Cristina",21351150,100,250);
+        Map<Integer, Integer> s = new HashMap<>();
+        Set<String> lista = new HashSet<>();
+
+        p1.agregarEmpleados();
+        p2.agregarEmpleados();
+        p3.agregarEmpleados();
+        p4.agregarEmpleados();
+
+        agregarSueldoPersona(sueldoEmpleados,p1);
+        agregarSueldoPersona(sueldoEmpleados,p2);
+        agregarSueldoPersona(sueldoEmpleados,p3);
+        agregarSueldoPersona(sueldoEmpleados,p4);
+
+        System.out.print(mostrarSueldo(sueldoEmpleados));
+
+
+    }
+
+    public static void agregarEmpleados(Set<String> lista, Empleado p) {
+        lista.add(p.getNombre());
+        lista.add(String.valueOf(p.getDni()));
+        lista.add(String.valueOf(p.getHoras()));
+        lista.add(String.valueOf(p.getValor()));
+    }
+
+    public static void agregarSueldoPersona(Map<Integer, Integer> sueldoPersonas, Empleado p) {
+
+        sueldoPersonas.put(p.getDni(),p.calcularSueldo());
+
+    }
+
+    public static Map<Integer, Integer> mostrarSueldo(Map<Integer, Integer> sueldoPersonas) {
+
+        return sueldoPersonas;
+
+    }
+
+public class Empleado {
+
+    private String nombreyApellido;
+    private int dni;
+    private int horasTrabajadas;
+    private int valorPorHora;
+
+    public Empleado(String nombreyApellido, int dni, int horasTrabajadas, int valorPorHora) {
+        this.nombreyApellido = nombreyApellido;
+        this.dni = dni;
+        this.horasTrabajadas = horasTrabajadas;
+        this.valorPorHora = valorPorHora;
+
+    }
+
+    public String getNombre() {
+        return this.nombreyApellido;
+    }
+    public int getDni() {
+        return this.dni;
+    }
+    public int getHoras() {
+        return this.horasTrabajadas;
+    }
+    public int getValor() {
+        return this.valorPorHora;
+    }
+
+    public int calcularSueldo() {
+
+        return this.horasTrabajadas * this.valorPorHora;
+    }
+}
+}
+
+************************************************************************************************************************
+************************************************************************************************************************
+EJERCICIO 7
+
+import java.util.*;
+
+public class Ejercicio7 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese dos números enteros (el primero menor que el segundo): ");
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        int num2 = scan.nextInt();
+        System.out.print(frase(num,num2));
+        scan.close();
+    }
+
+    public static List<String> frase(int n, int n2) {
+
+        List<String> numeros = new ArrayList<>();
+        for(int i = n;i < n2; i++) {
+            if((i % 2 == 0) && (n % 3 == 0)) {
+                numeros.add("FizzBuzz");
+            }
+            else if(i % 2 == 0) {
+                numeros.add("Fizz");
+            }
+            else if(i % 3 == 0) {
+                numeros.add("Buzz");
+            }
+            else {
+                String b = String.valueOf(i);
+                numeros.add(b);
+            }
+        }
+        return numeros;
+    }
+}

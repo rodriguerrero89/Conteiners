@@ -1,0 +1,281 @@
+Ejercicio1
+
+import java.util.*;
+
+public class Ejercicio1 {
+
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese su nombre de usuario por favor: ");
+        Scanner scan = new Scanner(System.in);
+        String usuario = scan.nextLine();
+        imprimirUsuario(usuario);
+        scan.close();
+
+    }
+
+    public static void imprimirUsuario(String a) {
+
+        System.out.println("Hola! " + a);
+
+    }
+}
+
+
+=====================================================================================================================
+=====================================================================================================================
+
+EJERCICIO 2
+
+import java.util.Scanner;
+
+public class Ejercicio2 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese dos números enteros: ");
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        int num2 = scan.nextInt();
+        System.out.println(num + "+" + num2 + "=" + suma(num, num2));
+        System.out.println(num + "-" + num2 + "=" + resta(num, num2));
+        System.out.println(num + "*" + num2 + "=" + multiplicacion(num, num2));
+        System.out.println(num + "/" + num2 + "=" + division(num, num2));
+        scan.close();
+    }
+
+    public static int suma (int a, int b) {
+        return a + b;
+    }
+    public static int resta (int a, int b) {
+        return a - b;
+    }
+    public static int multiplicacion (int a, int b) {
+        return a * b;
+    }
+    public static int division (int a, int b) {
+        return a / b;
+    }
+
+}
+
+=================================================================================================================
+=================================================================================================================
+
+EJERCICIO 3
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese un número entero: ");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        incremento(a);
+        scan.close();
+
+    }
+
+    public static void incremento (int a) {
+
+        String contenedor = "";
+        for (int i = 1; i <= a; i++) {
+            String b = Integer.toString(i);
+            contenedor += b;
+            System.out.println(contenedor);
+        }
+
+    }
+
+}
+
+
+====================================================================================================================
+=====================================================================================================================
+
+EJERCiCIO 4
+
+import java.util.Scanner;
+
+public class Ejercicio4 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese un número entero: ");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        factorial(a);
+        scan.close();
+
+    }
+    public static void factorial(int a) {
+
+        int contenedor = 1;
+        for (int i = 1; i <= a; i++) {
+            contenedor *= i;
+        }
+        System.out.print("El factorial de " + a + " es: " + contenedor);
+    }
+
+}
+
+========================================================================================================================
+========================================================================================================================
+
+EJERCICIO 5
+
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese dos numeros enteros a multiplicar: ");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        System.out.print(a + " * " + b + " = " + sumaSucesiva(a,b));
+        scan.close();
+
+    }
+
+    public static int sumaSucesiva(int a, int b) {
+
+        int suma = 0;
+        for(int i = 1; i <= b; i++) {
+            suma += a;
+        }
+        return suma;
+    }
+}
+
+==============================================================================================================================
+==============================================================================================================================
+
+EJERCICIO 6
+
+import java.util.Scanner;
+
+public class Ejercicio6 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese dos numeros enteros: ");
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        int num2 = scan.nextInt();
+        System.out.print(num + " elevado a " + num2 + " = " + potencia(num,num2));
+        scan.close();
+
+    }
+
+    public static int potencia(int a, int b) {
+
+        int pot = 1;
+        for (int i = 1; i <= b; i++) {
+            pot *= a;
+        }
+        return pot;
+    }
+}
+
+================================================================================================================================
+================================================================================================================================
+
+EJERCICIO 7
+
+import java.util.*;
+
+public class Ejercicio7 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese una palabra: ");
+        Scanner scan = new Scanner(System.in);
+        String palabra = scan.nextLine();
+        System.out.print(mayuscula(palabra));
+        scan.close();
+    }
+
+    public static String mayuscula(String p) {
+
+        String resultado = "";
+        for(int i = 0; i < p.length(); i++) {
+            Character caracter = p.charAt(i);
+            if(caracter >= 'a' && caracter <= 'z') {
+                caracter = (char)(caracter - 'a' + 'A');
+                caracter.toString();
+                resultado = resultado + caracter;
+            }
+        }
+        return resultado;
+    }
+}
+
+=================================================================================================================================
+=================================================================================================================================
+EJERCICIO 8
+
+import java.util.*;
+
+public class Ejercicio8 {
+
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese su NOMBRE Y APELLIDO, EDAD, DIRECCION Y CIUDAD por favor: ");
+        Scanner scan = new Scanner(System.in);
+        String nombre = scan.nextLine();
+        String edad = scan.nextLine();
+        String direccion = scan.nextLine();
+        String ciudad = scan.nextLine();
+        List<String> objeto = new ArrayList<>();
+        persona(nombre,edad,direccion,ciudad,objeto);
+        System.out.print(objeto.get(0) + " - " + objeto.get(1) + " - " + objeto.get(2) + " - " + objeto.get(3));
+        scan.close();
+
+    }
+    public static List<String> persona(String c, String d, String e, String n, List<String> o) {
+        o.add(c);
+        o.add(d);
+        o.add(e);
+        o.add(n);
+        return o;
+    }
+
+}
+
+=================================================================================================================================
+=================================================================================================================================
+EJERCICIO 9
+
+import java.util.*;
+
+public class Ejercicio9 {
+
+    public static void main(String[] args) {
+
+        System.out.println("Ingrese frase o texto y una letra para determinar cantidad de veces que se encuentra en el mismo: ");
+        Scanner scan = new Scanner(System.in);
+        String frase = scan.nextLine();
+        String letra = scan.nextLine();
+        System.out.print(letra + " aparece " + caracteres(frase,letra) + " veces");
+        scan.close();
+    }
+
+    public static int caracteres(String f, String l) {
+
+        int contador = 0;
+        char c = l.charAt(0);
+        for (int i = 0; i < f.length(); i++) {
+            if (c == f.charAt(i)) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+}
